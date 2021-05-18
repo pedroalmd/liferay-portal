@@ -109,8 +109,8 @@ definition {
 
 		for (var quantity : list "1,4,5,7,11") {
 			AssertElementPresent(
-				key_productName = "${product}",
 				key_optionValue = "${quantity}",
+				key_productName = "${product}",
 				locator1 = "CommerceFrontStore#PRODUCT_DETAILS_QUANTITY_OPTION");
 		}
 	}
