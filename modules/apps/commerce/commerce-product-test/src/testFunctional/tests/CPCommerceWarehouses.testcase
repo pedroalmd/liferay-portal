@@ -24,7 +24,6 @@ definition {
 
 			CommerceConfiguration.commerceInitializersTearDown();
 		}
-
 	}
 
 	@description = "This is a test for COMMERCE-6207. UI inventory items lifecycle"
@@ -34,6 +33,7 @@ definition {
 		property portal.acceptance = "false";
 
 		// TODO COMMERCE-6207 AddItemToWarehouse Pending Implementation
+
 	}
 
 	@description = "This is a test for COMMERCE-6206. Add income items"
@@ -271,9 +271,6 @@ definition {
 		AssertChecked(
 			checkboxName = "Minium Portal",
 			locator1 = "Checkbox#ANY_CHECKBOX_CHECKED");
-
-
-			
 	}
 
 	@description = "This is a test for COMMERCE-6208. Concurrency management for inventory entities"
