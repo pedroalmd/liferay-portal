@@ -253,8 +253,6 @@ definition {
 		AssertElementNotPresent(
 			key_productName = "Simple T-Shirt",
 			locator1 = "CommerceAccelerators#ADD_TO_CART_BUTTON_PRODUCT_DETAILS_PAGE_DISABLED");
-
-			
 	}
 
 	@description = "COMMERCE-6367. As a buyer, I don't want to be able to add a product to the cart in Product Details if the product is not purchasable"
