@@ -397,9 +397,6 @@ definition {
 		AssertElementPresent(
 			key_cartItemSKU = "MIN93016B",
 			locator1 = "CommerceAccelerators#MINI_CART_ITEM_NAME");
-
-
-			
 	}
 
 	@description = "COMMERCE-6658. As a buyer, I want to be able to select an option value(Bundled Product) and I want to see product details updating(Price, SKU and Availability)"
