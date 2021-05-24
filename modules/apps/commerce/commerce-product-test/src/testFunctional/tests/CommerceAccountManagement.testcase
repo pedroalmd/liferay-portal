@@ -129,7 +129,7 @@ definition {
 		AssertElementPresent(
 			key_addressType = "Test Organization",
 			locator1 = "CommerceAccelerators#ACCOUNT_MANAGEMENT_ADDRESS_TYPE");
-		
+
 		Click(
 			key_text = "Add Organizations",
 			locator1 = "Button#ANY");
@@ -143,8 +143,6 @@ definition {
 			locator1 = "CommerceAccelerators#ANY_BUTTON");
 
 		Alert.viewRequestFailedToComplete();
-
-		
 	}
 
 	@description = "COMMERCE-6357. In Members tab, I want to be unable to add a user that is already a member of the account"
