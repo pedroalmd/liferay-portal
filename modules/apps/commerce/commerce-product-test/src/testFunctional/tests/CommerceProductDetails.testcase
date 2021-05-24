@@ -485,8 +485,6 @@ definition {
 		AssertElementPresent(
 			key_availability = "Unavailable",
 			locator1 = "CommerceFrontStore#FS_PRODUCT_AVAILABILITY");
-
-			
 	}
 
 	@description = "COMMERCE-6659. I want to be able to use ADT to render Product Details widget and I want to be able to select a Display Template and see it applied to the widget"
