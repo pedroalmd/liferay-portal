@@ -182,7 +182,6 @@ definition {
 		AssertElementNotPresent(
 			key_addressType = "buyer@liferay.com",
 			locator1 = "CommerceAccelerators#ACCOUNT_MANAGEMENT_ADDRESS_TYPE");
-
 	}
 
 	@description = "COMMERCE-6376. In Addresses tab, I want to be able to search for an address using the search bar"
