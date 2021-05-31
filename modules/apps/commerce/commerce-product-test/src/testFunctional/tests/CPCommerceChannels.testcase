@@ -892,7 +892,7 @@ definition {
 	@description = "This is a test for COMMERCE-6276. EditNotificationTemplate"
 	@priority = "3"
 	test EditNotificationTemplate {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceChannels#EditNotificationTemplate";
 
 		// TODO Review
