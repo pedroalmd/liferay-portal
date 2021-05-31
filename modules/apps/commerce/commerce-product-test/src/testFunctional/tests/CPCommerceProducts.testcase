@@ -101,7 +101,7 @@ definition {
 	@description = "This is a test for COMMERCE-6301. AddVirtualProduct"
 	@priority = "3"
 	test AddVirtualProduct {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceProducts#AddVirtualProduct";
 
 		// TODO Review
