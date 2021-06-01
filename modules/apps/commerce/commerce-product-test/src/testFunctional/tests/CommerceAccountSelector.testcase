@@ -121,7 +121,7 @@ definition {
 	@description = "COMMERCE-5936. As a buyer, I want to be able to create a new order from the account selector dropdown's order list view, The created order should then be the selected order"
 	@priority = "3"
 	test CreateNewOrderFromAccountSelectorDropdown {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CommerceAccountSelector#CreateNewOrderFromAccountSelectorDropdown";
 
 		// TODO Review
