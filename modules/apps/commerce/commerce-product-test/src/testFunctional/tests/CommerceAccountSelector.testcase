@@ -67,7 +67,7 @@ definition {
 	@description = "COMMERCE-5925. As a buyer, I want the account I have currently selected to be highlighted in the account selector bar"
 	@priority = "3"
 	test AssertActiveAccountIsVisibleOnAccountSelectorBar {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CommerceAccountSelector#AssertActiveAccountIsVisibleOnAccountSelectorBar";
 
 		// TODO Review
