@@ -952,7 +952,7 @@ definition {
 	@description = "This is a test for COMMERCE-6274. EditProductDisplayPage"
 	@priority = "3"
 	test EditProductDisplayPage {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceChannels#EditProductDisplayPage";
 
 		// TODO Review
