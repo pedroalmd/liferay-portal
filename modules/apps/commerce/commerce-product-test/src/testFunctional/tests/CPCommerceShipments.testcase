@@ -220,7 +220,7 @@ definition {
 	@description = "This is a test for COMMERCE-6250. Delete shipment"
 	@priority = "3"
 	test DeleteShipment {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceShipments#DeleteShipment";
 
 		// TODO Review
