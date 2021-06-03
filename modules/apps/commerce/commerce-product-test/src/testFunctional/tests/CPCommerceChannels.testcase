@@ -488,7 +488,7 @@ definition {
 	@description = "This is a test for COMMERCE-6195. CreateCategoryDisplayPage"
 	@priority = "3"
 	test CreateCategoryDisplayPage {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceChannels#CreateCategoryDisplayPage";
 
 		// TODO Review
