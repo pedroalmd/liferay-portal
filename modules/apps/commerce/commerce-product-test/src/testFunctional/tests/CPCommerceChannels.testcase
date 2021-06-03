@@ -486,13 +486,62 @@ definition {
 	}
 
 	@description = "This is a test for COMMERCE-6195. CreateCategoryDisplayPage"
-	@ignore = "true"
 	@priority = "3"
 	test CreateCategoryDisplayPage {
 		property portal.acceptance = "false";
+		property test.name.skip.portal.instance = "CPCommerceChannels#CreateCategoryDisplayPage";
 
-		// TODO COMMERCE-6195 CreateCategoryDisplayPage
+		// TODO Review
 
+		CommerceAccelerators.initializeNewSiteViaAccelerator(siteName = "Minium");
+
+		CommerceNavigator.gotoPortlet(
+			category = "Store Management",
+			portlet = "Channels");
+
+		CommerceNavigator.gotoEntry(entryName = "Minium Portal");
+
+		CommerceEntry.gotoMenuTab(menuTab = "Category Display Pages");
+
+		Click(locator1 = "Button#PLUS");
+
+		SelectFrame.selectFrameNoLoading(locator1 = "CommerceEntry#IFRAME_SIDE_PANEL");
+
+		Click(locator1 = "Button#SELECT");
+
+		AssetCategorization.gotoSelectCategory();
+
+		Portlet.selectTreeNode(nodeName = "Brake System");
+
+		SelectFrameTop();
+
+		SelectFrame.selectFrameNoLoading(locator1 = "CommerceEntry#IFRAME_SIDE_PANEL");
+
+		Click(
+			key_text = "Done",
+			locator1 = "Modal#MODAL_FOOTER_BUTTON");
+
+		Click(locator1 = "Button#CHOOSE");
+
+		SelectFrame.selectFrameNoLoading(
+			key_title = "Select Category Display Page",
+			locator1 = "IFrame#MODAL_ANY");
+
+		Click(
+			key_nodeName = "Login",
+			locator1 = "Treeview#NODE_UNSELECTED");
+
+		SelectFrame.selectFrameNoLoading(locator1 = "CommerceEntry#IFRAME_SIDE_PANEL");
+
+		Button.clickSave();
+
+		Alert.viewSuccessMessage();
+
+		Refresh();
+
+		AssertElementPresent(
+			key_index = "Brake System",
+			locator1 = "WorkflowMetrics#SEARCH_FIELD_MAPPINGS_METRICS_INDEXES");
 	}
 
 	test CreateNewChannel {
