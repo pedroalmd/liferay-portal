@@ -302,7 +302,7 @@ definition {
 	@description = "COMMERCE-6319. As a buyer, I want to be able to search a Catalog entry using Global Search(Product Name, Product Name with single quotes, Product Name with double quotes) and I want to be able to click on a suggested entry and get redirected to that product Details page"
 	@priority = "3"
 	test GlobalSearchSuggestedCatalogEntries {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CommerceSearch#GlobalSearchSuggestedCatalogEntries";
 
 		// TODO Review
