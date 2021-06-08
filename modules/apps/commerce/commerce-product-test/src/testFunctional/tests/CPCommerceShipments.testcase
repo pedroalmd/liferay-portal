@@ -341,7 +341,7 @@ definition {
 	@description = "This is a test for COMMERCE-6240. Remove shipment items from a shipment"
 	@priority = "3"
 	test RemoveItemFromShipment {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceShipments#RemoveItemFromShipment";
 
 		// TODO Review
