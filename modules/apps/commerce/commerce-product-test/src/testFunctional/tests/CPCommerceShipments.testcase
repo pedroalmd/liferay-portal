@@ -321,7 +321,7 @@ definition {
 	@description = "This is a test for COMMERCE-6241. Execute the shipment workflow"
 	@priority = "3"
 	test ExecuteShipmentWorkflow {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceShipments#ExecuteShipmentWorkflow";
 
 		// TODO Review
