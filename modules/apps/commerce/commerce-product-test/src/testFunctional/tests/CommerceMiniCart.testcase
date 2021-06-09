@@ -510,7 +510,7 @@ definition {
 	@description = "COMMERCE-6330. As a buyer, I want to be able to empty my open cart after clicking on 'Remove All Items'(Yes/No)"
 	@priority = "3"
 	test RemoveAllItemsFromMiniCart {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CommerceMiniCart#RemoveAllItemsFromMiniCart";
 
 		// TODO Review
