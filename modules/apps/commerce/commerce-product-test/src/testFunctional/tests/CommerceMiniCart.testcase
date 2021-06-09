@@ -520,7 +520,7 @@ definition {
 	@description = "COMMERCE-6331. As a buyer, I want to be able to remove an item from cart by clicking on the delete button('x')"
 	@priority = "3"
 	test RemoveSingleCartItemFromMiniCart {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CommerceMiniCart#RemoveSingleCartItemFromMiniCart";
 
 		// TODO Review
