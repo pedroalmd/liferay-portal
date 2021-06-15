@@ -705,7 +705,7 @@ definition {
 	@description = "COMMERCE-6334. As a buyer, I want to be able to view bundled product details in the mini-cart(Name, SKU, Bundled Items, Quantity, List Price, Image)"
 	@priority = "3"
 	test ViewMiniCartBundledProductDetails {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CommerceMiniCart#ViewMiniCartBundledProductDetails";
 
 		// TODO Review
