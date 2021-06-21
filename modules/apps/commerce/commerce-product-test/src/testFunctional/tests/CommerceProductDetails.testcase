@@ -922,7 +922,7 @@ definition {
 	@description = "COMMERCE-6660. I want to be able to set a custom renderer for product type different than the default one(Simple/Grouped/Virtual)"
 	@priority = "3"
 	test UseCustomRenderersInProductDetails {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CommerceProductDetails#UseCustomRenderersInProductDetails";
 
 		// TODO Review
