@@ -219,6 +219,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>PRODUCT_DETAILS_CONFIGURATION_CUSTOM_RENDERER_TYPE</td>
+	<td>//a[@class='nav-link tab-label tab-content' and contains(.,'${key_type}')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>PRODUCT_CARD_AVAILABILITY_LABEL</td>
 	<td>//a[contains(@href,'${key_productName}')]//span[contains(@class,'m-0')]</td>
 	<td></td>

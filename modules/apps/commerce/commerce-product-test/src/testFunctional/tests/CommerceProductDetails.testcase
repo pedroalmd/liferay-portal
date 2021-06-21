@@ -920,13 +920,181 @@ definition {
 	}
 
 	@description = "COMMERCE-6660. I want to be able to set a custom renderer for product type different than the default one(Simple/Grouped/Virtual)"
-	@ignore = "true"
 	@priority = "3"
 	test UseCustomRenderersInProductDetails {
 		property portal.acceptance = "false";
+		property test.name.skip.portal.instance = "CommerceProductDetails#UseCustomRenderersInProductDetails";
 
-		// TODO COMMERCE-6660 UseCustomRenderersInProductDetails pending implementation
+		// TODO Review
 
+		CommerceAccelerators.initializeNewSiteViaAccelerator(siteName = "Minium");
+
+		CommerceNavigator.gotoPortlet(
+			category = "Product Management",
+			portlet = "Products");
+
+		CPCommerceCatalog.newProductsEntry(
+			productCatalog = "Minium",
+			productName = "Grouped Product",
+			productType = "Grouped");
+
+		CommerceEntry.gotoMenuTab(menuTab = "SKUs");
+
+		CommerceNavigator.gotoEntry(entryName = "default");
+
+		SelectFrame.selectFrameNoLoading(locator1 = "CommerceEntry#IFRAME_SIDE_PANEL");
+
+		Type(
+			key_fieldLabel = "Base Price",
+			locator1 = "TextInput#GENERIC_TEXT_INPUT",
+			value1 = "20.0");
+
+		Button.clickPublish();
+
+		Refresh();
+
+		CommerceNavigator.gotoPortlet(
+			category = "Product Management",
+			portlet = "Products");
+
+		CPCommerceCatalog.newProductsEntry(
+			productCatalog = "Minium",
+			productName = "Virtual Product",
+			productType = "Virtual");
+
+		CommerceEntry.gotoMenuTab(menuTab = "SKUs");
+
+		CommerceNavigator.gotoEntry(entryName = "default");
+
+		SelectFrame.selectFrameNoLoading(locator1 = "CommerceEntry#IFRAME_SIDE_PANEL");
+
+		Type(
+			key_fieldLabel = "Base Price",
+			locator1 = "TextInput#GENERIC_TEXT_INPUT",
+			value1 = "30.0");
+
+		Button.clickPublish();
+
+		Refresh();
+
+		ApplicationsMenu.gotoSite(site = "Minium");
+
+		CommerceAcceleratorsInitializer.gotoMiniumProductDetailsPage(productName = "U-Joint");
+
+		Click.mouseOverClick(locator1 = "Portlet#OPTIONS_ICON");
+
+		MenuItem.clickNoError(menuItem = "Configuration");
+
+		SelectFrame(locator1 = "IFrame#MODAL_BODY");
+
+		Click(
+			key_contentType = "Custom Renderer",
+			locator1 = "Notifications#NOTIFICATION_DELIVERY_PANEL");
+
+		Click(
+			key_type = "Simple",
+			locator1 = "CommerceAccelerators#PRODUCT_DETAILS_CONFIGURATION_CUSTOM_RENDERER_TYPE");
+
+		Select(
+			key_title = "Simple Commerce Product Type Renderer Key",
+			locator1 = "CommerceEntry#CATALOGS_FORM",
+			value1 = "Simple");
+
+		Button.clickSave();
+
+		Alert.viewSuccessMessage();
+
+		Refresh();
+
+		AssertElementPresent(
+			key_title = "U-Joint",
+			locator1 = "Header#H1_TITLE");
+
+		AssertElementPresent(
+			key_nameTableChannels = "MIN55861",
+			locator1 = "CommerceEntry#SEARCH_TABLES_CHANNELS");
+
+		AssertTextEquals.assertPartialText(
+			locator1 = "CommerceAccelerators#PRODUCT_DETAILS_LIST_PRICE",
+			value1 = "24.00");
+
+		AssertElementPresent(
+			key_errorMessage = "Available",
+			locator1 = "WorkflowMetricsSLA#SLA_ERROR_MESSAGE");
+
+		CommerceNavigator.gotoMiniumSidebarItem(menuItem = "Catalog");
+
+		CommerceAcceleratorsInitializer.gotoMiniumProductDetailsPage(productName = "Grouped Product");
+
+		Click.mouseOverClick(locator1 = "Portlet#OPTIONS_ICON");
+
+		MenuItem.clickNoError(menuItem = "Configuration");
+
+		SelectFrame(locator1 = "IFrame#MODAL_BODY");
+
+		Click(
+			key_type = "Grouped",
+			locator1 = "CommerceAccelerators#PRODUCT_DETAILS_CONFIGURATION_CUSTOM_RENDERER_TYPE");
+
+		Select(
+			key_title = "Grouped Commerce Product Type Renderer Key",
+			locator1 = "CommerceEntry#CATALOGS_FORM",
+			value1 = "Grouped");
+
+		Button.clickSave();
+
+		Alert.viewSuccessMessage();
+
+		Refresh();
+
+		AssertElementPresent(
+			key_title = "Grouped Product",
+			locator1 = "Header#H1_TITLE");
+
+		AssertElementPresent(
+			key_nameTableChannels = "default",
+			locator1 = "CommerceEntry#SEARCH_TABLES_CHANNELS");
+
+		AssertTextEquals.assertPartialText(
+			locator1 = "CommerceAccelerators#PRODUCT_DETAILS_LIST_PRICE",
+			value1 = "20.00");
+
+		CommerceNavigator.gotoMiniumSidebarItem(menuItem = "Catalog");
+
+		CommerceAcceleratorsInitializer.gotoMiniumProductDetailsPage(productName = "Virtual Product");
+
+		Click.mouseOverClick(locator1 = "Portlet#OPTIONS_ICON");
+
+		MenuItem.clickNoError(menuItem = "Configuration");
+
+		SelectFrame(locator1 = "IFrame#MODAL_BODY");
+
+		Click(
+			key_type = "Virtual",
+			locator1 = "CommerceAccelerators#PRODUCT_DETAILS_CONFIGURATION_CUSTOM_RENDERER_TYPE");
+
+		Select(
+			key_title = "Virtual Commerce Product Type Renderer Key",
+			locator1 = "CommerceEntry#CATALOGS_FORM",
+			value1 = "Virtual");
+
+		Button.clickSave();
+
+		Alert.viewSuccessMessage();
+
+		Refresh();
+
+		AssertElementPresent(
+			key_title = "Virtual Product",
+			locator1 = "Header#H1_TITLE");
+
+		AssertElementPresent(
+			key_nameTableChannels = "default",
+			locator1 = "CommerceEntry#SEARCH_TABLES_CHANNELS");
+
+		AssertTextEquals.assertPartialText(
+			locator1 = "CommerceAccelerators#PRODUCT_DETAILS_LIST_PRICE",
+			value1 = "30.00");
 	}
 
 	@description = "COMMERCE-6364. As a buyer, I want the first selectable quantity of a product in Product Details to be the minimum multiple quantity if Minimum Order Quantity is higher than Multiple Order Quantity"
