@@ -69,7 +69,7 @@ definition {
 	@description = "This is a test for COMMERCE-6249. Shipment items should be taken only from active warehouses"
 	@priority = "3"
 	test AssertShipmentItemTakenFromActiveWarehouses {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceShipments#AssertShipmentItemTakenFromActiveWarehouses";
 
 		// TODO Review
