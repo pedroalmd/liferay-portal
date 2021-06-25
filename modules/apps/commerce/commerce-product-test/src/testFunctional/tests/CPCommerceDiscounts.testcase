@@ -411,7 +411,7 @@ definition {
 	@description = "This is a test for COMMERCE-6233. Discount expiration"
 	@priority = "3"
 	test ViewExpiredDiscountEntry {
-		property portal.acceptance = "false";
+		property portal.acceptance = "Intern Test";
 		property test.name.skip.portal.instance = "CPCommerceDiscounts#ViewExpiredDiscountEntry";
 
 		// TODO Review
